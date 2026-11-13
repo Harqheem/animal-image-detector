@@ -1,0 +1,1 @@
+"""Fieldmark animal detector network."""

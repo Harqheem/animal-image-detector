@@ -1,0 +1,440 @@
+{
+  "dataset": "Pascal VOC 2007 trainval, animal boxes only",
+  "classes": [
+    "bird",
+    "cat",
+    "dog",
+    "horse",
+    "sheep",
+    "cow"
+  ],
+  "imageSize": 224,
+  "grid": 7,
+  "boxesPerCell": 2,
+  "parameters": 11190876,
+  "epochs": 14,
+  "bestRecall": 0.5603,
+  "bestPrecision": 0.1618,
+  "bestF1": 0.2511,
+  "perClassRecall": {
+    "bird": 0.4937,
+    "cat": 0.8364,
+    "dog": 0.6571,
+    "horse": 0.7143,
+    "sheep": 0.1064,
+    "cow": 0.4634
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "trainLoss": 3.5829,
+      "valLoss": 2.2053,
+      "recall": 0.3506,
+      "precision": 0.041,
+      "f1": 0.0734,
+      "maxScore": 0.9984,
+      "seconds": 23.8
+    },
+    {
+      "epoch": 2,
+      "trainLoss": 2.422,
+      "valLoss": 2.2634,
+      "recall": 0.3879,
+      "precision": 0.0492,
+      "f1": 0.0874,
+      "maxScore": 0.9997,
+      "seconds": 24.3
+    },
+    {
+      "epoch": 3,
+      "trainLoss": 2.1825,
+      "valLoss": 2.0223,
+      "recall": 0.4052,
+      "precision": 0.0472,
+      "f1": 0.0846,
+      "maxScore": 0.9996,
+      "seconds": 23.8
+    },
+    {
+      "epoch": 4,
+      "trainLoss": 2.0381,
+      "valLoss": 2.0542,
+      "recall": 0.4109,
+      "precision": 0.0466,
+      "f1": 0.0838,
+      "maxScore": 0.9998,
+      "seconds": 23.2
+    },
+    {
+      "epoch": 5,
+      "trainLoss": 1.8783,
+      "valLoss": 2.0135,
+      "recall": 0.4138,
+      "precision": 0.0526,
+      "f1": 0.0934,
+      "maxScore": 0.9996,
+      "seconds": 41.6
+    },
+    {
+      "epoch": 6,
+      "trainLoss": 1.8012,
+      "valLoss": 1.9856,
+      "recall": 0.4339,
+      "precision": 0.0546,
+      "f1": 0.0969,
+      "maxScore": 0.9997,
+      "seconds": 23.3
+    },
+    {
+      "epoch": 7,
+      "trainLoss": 2.2039,
+      "valLoss": 1.8472,
+      "recall": 0.5,
+      "precision": 0.0697,
+      "f1": 0.1224,
+      "maxScore": 0.9999,
+      "seconds": 48.8
+    },
+    {
+      "epoch": 8,
+      "trainLoss": 1.4312,
+      "valLoss": 1.7641,
+      "recall": 0.5201,
+      "precision": 0.0847,
+      "f1": 0.1456,
+      "maxScore": 1.0,
+      "seconds": 48.7
+    },
+    {
+      "epoch": 9,
+      "trainLoss": 1.1189,
+      "valLoss": 1.5408,
+      "recall": 0.5575,
+      "precision": 0.1022,
+      "f1": 0.1728,
+      "maxScore": 1.0,
+      "seconds": 47.9
+    },
+    {
+      "epoch": 10,
+      "trainLoss": 0.8927,
+      "valLoss": 1.6221,
+      "recall": 0.5402,
+      "precision": 0.1124,
+      "f1": 0.186,
+      "maxScore": 0.9999,
+      "seconds": 48.9
+    },
+    {
+      "epoch": 11,
+      "trainLoss": 0.7167,
+      "valLoss": 1.6489,
+      "recall": 0.5489,
+      "precision": 0.1455,
+      "f1": 0.23,
+      "maxScore": 0.9999,
+      "seconds": 48.9
+    },
+    {
+      "epoch": 12,
+      "trainLoss": 0.6111,
+      "valLoss": 1.5472,
+      "recall": 0.5345,
+      "precision": 0.1363,
+      "f1": 0.2172,
+      "maxScore": 1.0,
+      "seconds": 49.6
+    },
+    {
+      "epoch": 13,
+      "trainLoss": 0.5312,
+      "valLoss": 1.539,
+      "recall": 0.5489,
+      "precision": 0.1524,
+      "f1": 0.2386,
+      "maxScore": 1.0,
+      "seconds": 48.3
+    },
+    {
+      "epoch": 14,
+      "trainLoss": 0.4905,
+      "valLoss": 1.5237,
+      "recall": 0.5603,
+      "precision": 0.1618,
+      "f1": 0.2511,
+      "maxScore": 1.0,
+      "seconds": 48.4
+    }
+  ],
+  "trainedSeconds": 553.3,
+  "layers": [
+    {
+      "name": "stem.0",
+      "kind": "conv",
+      "inChannels": 3,
+      "outChannels": 64,
+      "kernel": 7,
+      "stride": 2
+    },
+    {
+      "name": "stem.1",
+      "kind": "batchnorm",
+      "channels": 64
+    },
+    {
+      "name": "layer1.0.conv1",
+      "kind": "conv",
+      "inChannels": 64,
+      "outChannels": 64,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer1.0.bn1",
+      "kind": "batchnorm",
+      "channels": 64
+    },
+    {
+      "name": "layer1.0.conv2",
+      "kind": "conv",
+      "inChannels": 64,
+      "outChannels": 64,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer1.0.bn2",
+      "kind": "batchnorm",
+      "channels": 64
+    },
+    {
+      "name": "layer1.1.conv1",
+      "kind": "conv",
+      "inChannels": 64,
+      "outChannels": 64,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer1.1.bn1",
+      "kind": "batchnorm",
+      "channels": 64
+    },
+    {
+      "name": "layer1.1.conv2",
+      "kind": "conv",
+      "inChannels": 64,
+      "outChannels": 64,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer1.1.bn2",
+      "kind": "batchnorm",
+      "channels": 64
+    },
+    {
+      "name": "layer2.0.conv1",
+      "kind": "conv",
+      "inChannels": 64,
+      "outChannels": 128,
+      "kernel": 3,
+      "stride": 2
+    },
+    {
+      "name": "layer2.0.bn1",
+      "kind": "batchnorm",
+      "channels": 128
+    },
+    {
+      "name": "layer2.0.conv2",
+      "kind": "conv",
+      "inChannels": 128,
+      "outChannels": 128,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer2.0.bn2",
+      "kind": "batchnorm",
+      "channels": 128
+    },
+    {
+      "name": "layer2.0.downsample.0",
+      "kind": "conv",
+      "inChannels": 64,
+      "outChannels": 128,
+      "kernel": 1,
+      "stride": 2
+    },
+    {
+      "name": "layer2.0.downsample.1",
+      "kind": "batchnorm",
+      "channels": 128
+    },
+    {
+      "name": "layer2.1.conv1",
+      "kind": "conv",
+      "inChannels": 128,
+      "outChannels": 128,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer2.1.bn1",
+      "kind": "batchnorm",
+      "channels": 128
+    },
+    {
+      "name": "layer2.1.conv2",
+      "kind": "conv",
+      "inChannels": 128,
+      "outChannels": 128,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer2.1.bn2",
+      "kind": "batchnorm",
+      "channels": 128
+    },
+    {
+      "name": "layer3.0.conv1",
+      "kind": "conv",
+      "inChannels": 128,
+      "outChannels": 256,
+      "kernel": 3,
+      "stride": 2
+    },
+    {
+      "name": "layer3.0.bn1",
+      "kind": "batchnorm",
+      "channels": 256
+    },
+    {
+      "name": "layer3.0.conv2",
+      "kind": "conv",
+      "inChannels": 256,
+      "outChannels": 256,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer3.0.bn2",
+      "kind": "batchnorm",
+      "channels": 256
+    },
+    {
+      "name": "layer3.0.downsample.0",
+      "kind": "conv",
+      "inChannels": 128,
+      "outChannels": 256,
+      "kernel": 1,
+      "stride": 2
+    },
+    {
+      "name": "layer3.0.downsample.1",
+      "kind": "batchnorm",
+      "channels": 256
+    },
+    {
+      "name": "layer3.1.conv1",
+      "kind": "conv",
+      "inChannels": 256,
+      "outChannels": 256,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer3.1.bn1",
+      "kind": "batchnorm",
+      "channels": 256
+    },
+    {
+      "name": "layer3.1.conv2",
+      "kind": "conv",
+      "inChannels": 256,
+      "outChannels": 256,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer3.1.bn2",
+      "kind": "batchnorm",
+      "channels": 256
+    },
+    {
+      "name": "layer4.0.conv1",
+      "kind": "conv",
+      "inChannels": 256,
+      "outChannels": 512,
+      "kernel": 3,
+      "stride": 2
+    },
+    {
+      "name": "layer4.0.bn1",
+      "kind": "batchnorm",
+      "channels": 512
+    },
+    {
+      "name": "layer4.0.conv2",
+      "kind": "conv",
+      "inChannels": 512,
+      "outChannels": 512,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer4.0.bn2",
+      "kind": "batchnorm",
+      "channels": 512
+    },
+    {
+      "name": "layer4.0.downsample.0",
+      "kind": "conv",
+      "inChannels": 256,
+      "outChannels": 512,
+      "kernel": 1,
+      "stride": 2
+    },
+    {
+      "name": "layer4.0.downsample.1",
+      "kind": "batchnorm",
+      "channels": 512
+    },
+    {
+      "name": "layer4.1.conv1",
+      "kind": "conv",
+      "inChannels": 512,
+      "outChannels": 512,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer4.1.bn1",
+      "kind": "batchnorm",
+      "channels": 512
+    },
+    {
+      "name": "layer4.1.conv2",
+      "kind": "conv",
+      "inChannels": 512,
+      "outChannels": 512,
+      "kernel": 3,
+      "stride": 1
+    },
+    {
+      "name": "layer4.1.bn2",
+      "kind": "batchnorm",
+      "channels": 512
+    },
+    {
+      "name": "head",
+      "kind": "conv",
+      "inChannels": 512,
+      "outChannels": 22,
+      "kernel": 1,
+      "stride": 1
+    }
+  ]
+}

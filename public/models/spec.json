@@ -1,0 +1,25 @@
+{
+  "classes": [
+    "bird",
+    "cat",
+    "dog",
+    "horse",
+    "sheep",
+    "cow"
+  ],
+  "imageSize": 224,
+  "grid": 7,
+  "boxesPerCell": 2,
+  "fill": 114,
+  "channels": 11,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ]
+}
