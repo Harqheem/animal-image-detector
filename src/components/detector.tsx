@@ -72,9 +72,11 @@ export function Detector() {
         // through the app bundler never finishes, so the page stays on
         // "Loading network".
         const ort = (await withTimeout(
+          // Served from public/ort. The bundler must not compile this file.
           import(
             /* webpackIgnore: true */
             /* turbopackIgnore: true */
+            // @ts-expect-error The runtime is a static browser file, not a TypeScript module.
             "/ort/ort.wasm.min.mjs"
           ),
           15000,
