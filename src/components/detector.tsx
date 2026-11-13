@@ -68,12 +68,27 @@ export function Detector() {
           throw new Error("The trained network is not in this build yet.");
         }
         const nextSpec = (await specResponse.json()) as Spec;
-        const ort = (await import("onnxruntime-web/wasm")) as OrtModule;
+        // The packaged runtime is loaded as a static file. Importing it
+        // through the app bundler never finishes, so the page stays on
+        // "Loading network".
+        const ort = (await withTimeout(
+          import(
+            /* webpackIgnore: true */
+            /* turbopackIgnore: true */
+            "/ort/ort.wasm.min.mjs"
+          ),
+          15000,
+          "The runtime did not load.",
+        )) as OrtModule;
         ort.env.wasm.numThreads = 1;
         ort.env.wasm.wasmPaths = "/ort/";
-        const session = await ort.InferenceSession.create("/models/animal-detector.onnx", {
-          executionProviders: ["wasm"],
-        });
+        const session = await withTimeout(
+          ort.InferenceSession.create("/models/animal-detector.onnx", {
+            executionProviders: ["wasm"],
+          }),
+          25000,
+          "The network took too long to load.",
+        );
         if (cancelled) return;
         ortRef.current = ort;
         sessionRef.current = session;
@@ -545,6 +560,22 @@ function MarkLabel({
       </text>
     </g>
   );
+}
+
+function withTimeout<T>(work: Promise<T>, milliseconds: number, message: string): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error(message)), milliseconds);
+    work.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (error: unknown) => {
+        clearTimeout(timer);
+        reject(error instanceof Error ? error : new Error(message));
+      },
+    );
+  });
 }
 
 type OrtTensor = {
