@@ -33,7 +33,7 @@ python -m ml.train
 `python -m ml.train` writes:
 
 - `public/models/animal-detector.onnx` — the weights the page runs
-- `public/models/animal-detector.pt` — the same weights for `python -m ml.predict photo.jpg`
+- `public/models/animal-detector.pt` — the same weights for `python -m ml.predict photo.jpg`, written locally and not stored in the repo
 - `public/models/spec.json` — grid size and class names
 - `public/models/report.json` — held-out recall and the layer list
 

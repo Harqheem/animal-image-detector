@@ -43,6 +43,8 @@ next-env.d.ts
 # training data and local checkpoints
 /data/
 ml/checkpoints/
+# PyTorch copy of the weights. The page runs the ONNX file.
+public/models/*.pt
 __pycache__/
 *.py[cod]
 .venv/
